@@ -1,5 +1,5 @@
 <h1>Future code {{ data.title }}</h1>
-<fc-demo></fc-demo>
+<fc-demo />
 
 <!-- _________________________________________________ -->
 
@@ -24,7 +24,12 @@
 <!-- pass string => "'test'"  -->
 <!-- <app-card [title]="'test'"></app-card> -->
 
-<app-card
-  [cardData]="dataOfCard"
-  (viewCourseEvent)="onCourseClicked($event)"
-></app-card>
+<app-card [cardData]="dataOfCard" (viewCourseEvent)="onCourseClicked($event)" />
+
+<!-- __________________________ -->
+
+<!-- [testData]="dataOfCard" (Data moves from parent to child) -->
+<!-- (testEventEmmiter)="onTestClicked($event)" (Data moves from child to parent using events) -->
+<app-test [testData]="dataOfCard" (testEventEmmiter)="onTestClicked($event)" />
+
+<!-- __________________________ -->

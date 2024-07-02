@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { DemoComponent } from './demo/demo.component';
 import { CardComponent } from './card/card.component';
 import { CardDataInterface } from './app.component.model';
+import { TestComponent } from './test/test.component';
 
 @Component({
   selector: 'app-root', // starts with word (app- ....)
   standalone: true,
-  imports: [RouterOutlet, DemoComponent, CardComponent],
+  imports: [RouterOutlet, DemoComponent, CardComponent, TestComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   // styleUrls: ['...', '...']
@@ -32,5 +33,10 @@ export class AppComponent {
 
   onCourseClicked(course: CardDataInterface): void {
     console.log('On Course clicked!!!!!', course.title);
+  }
+
+  onTestClicked(title: string): void {
+    console.log('title');
+    console.log(title);
   }
 }

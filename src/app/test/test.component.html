@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h2>{{ testData.title }}</h2>
+  </div>
+  <div class="card-image">
+    <img [src]="testData.logo" alt="Angular Logo" />
+  </div>
+  <div class="card-footer">
+    <p>{{ testData.text }}</p>
+  </div>
+  <div class="p-2">
+    <!-- Lifting state up -->
+    <button class="btn btn-primary" (click)="leftStateUp()">View Course</button>
+  </div>
+  <!-- Change the variable title dynamically -->
+  <input #inputRef (keyup)="changeTitle(inputRef.value)" />
+</div>

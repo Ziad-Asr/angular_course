@@ -16,7 +16,7 @@ export class CardComponent {
 
   @Output() viewCourseEvent = new EventEmitter<CardDataInterface>();
 
-  viewCourse(course: CardDataInterface): void {
+  viewCourse(): void {
     this.viewCourseEvent.emit(this.cardData);
   }
 }

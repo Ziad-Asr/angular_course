@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+    <h2>{{ cardData.title }}</h2>
+  </div>
+  <div class="card-image">
+    <img [src]="cardData.logo" alt="Angular Logo" />
+  </div>
+  <div class="card-footer">
+    <p>{{ cardData.text }}</p>
+  </div>
+  <div class="p-2">
+    <button class="btn btn-primary" (click)="viewCourse()">View Course</button>
+  </div>
+</div>

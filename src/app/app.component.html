@@ -1,4 +1,30 @@
 <h1>Future code {{ data.title }}</h1>
 <fc-demo></fc-demo>
 
+<!-- _________________________________________________ -->
+
 <div class="fw-bold">Test</div>
+
+<!-- Click method -->
+<img
+  src="../assets/images/snap_logo.png"
+  alt="logo"
+  loading="lazy"
+  (click)="onLogoclicked()"
+/>
+
+<!-- Dynamic values  -->
+<!-- keyup => Like (onChange) method   -->
+<!-- [value]="data.title" => Change values in the class (could use the same sntax to pass data between components) -->
+<input [value]="data.title" #inputRef (keyup)="onKeyUp(inputRef.value)" />
+
+<!-- _________________________________________________ -->
+
+<!-- Passing data to child  -->
+<!-- pass string => "'test'"  -->
+<!-- <app-card [title]="'test'"></app-card> -->
+
+<app-card
+  [cardData]="dataOfCard"
+  (viewCourseEvent)="onCourseClicked($event)"
+></app-card>

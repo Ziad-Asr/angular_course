@@ -1,0 +1,3 @@
+(ctrl + shift + c) => open cmd on current project
+
+(ng g c ...) => Create component 

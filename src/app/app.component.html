@@ -1,50 +1,51 @@
-<h1>Future code {{ data.title }}</h1>
-<fc-demo />
+<!-- <h1>Future code {{ data.title }}</h1>
+<fc-demo /> -->
 
-<!-- _________________________________________________ -->
-<div>
+<!-- _____________________________________________________________________________________________ -->
+<!-- <div>
   ---------------------------------------------------------------------------------------------
-</div>
+</div> -->
 
-<div class="fw-bold">Test</div>
+<!-- <div class="fw-bold">Test</div> -->
 
 <!-- Click method -->
-<img
+<!-- <img
   src="../assets/images/snap_logo.png"
   alt="logo"
   loading="lazy"
   (click)="onLogoclicked()"
 />
+<input [value]="data.title" #inputRef (keyup)="onKeyUp(inputRef.value)" /> -->
 
 <!-- Dynamic values  -->
 <!-- keyup => Like (onChange) method   -->
 <!-- [value]="data.title" => Change values in the class (could use the same sntax to pass data between components) -->
-<input [value]="data.title" #inputRef (keyup)="onKeyUp(inputRef.value)" />
 
-<!-- _________________________________________________ -->
-<div>
+<!-- _____________________________________________________________________________________________ -->
+<!-- <div>
   ---------------------------------------------------------------------------------------------
-</div>
+</div> -->
 
 <!-- Passing data to child  -->
 <!-- pass string => "'test'"  -->
 <!-- <app-card [title]="'test'"></app-card> -->
 
-<app-card [cardData]="dataOfCard" (viewCourseEvent)="onCourseClicked($event)" />
+<!-- <app-card [cardData]="dataOfCard" (viewCourseEvent)="onCourseClicked($event)" /> -->
 
-<!-- __________________________ -->
-<div>
+<!-- _____________________________________________________________________________________________ -->
+<!-- <div>
   ---------------------------------------------------------------------------------------------
-</div>
+</div> -->
+
+<!-- <app-test [testData]="dataOfCard" (testEventEmmiter)="onTestClicked($event)" /> -->
 
 <!-- [testData]="dataOfCard" (Data moves from parent to child) -->
 <!-- (testEventEmmiter)="onTestClicked($event)" (Data moves from child to parent using events) -->
-<app-test [testData]="dataOfCard" (testEventEmmiter)="onTestClicked($event)" />
 
-<!-- __________________________ -->
-<div>
+<!-- _____________________________________________________________________________________________ -->
+<!-- <div>
   ---------------------------------------------------------------------------------------------
-</div>
+</div> -->
 
 <!-- Old way of looping -->
 
@@ -52,10 +53,10 @@
   <app-card [cardData]="courseData" />
 </ng-container> -->
 
-<!-- __________________________ -->
-<div>
+<!-- _____________________________________________________________________________________________ -->
+<!-- <div>
   ---------------------------------------------------------------------------------------------
-</div>
+</div> -->
 
 <!-- @for(courseData of dataCourses; track courseData.id; let index = $index; let
 count = $count; let first = $first; let last = $last; let even = $even; let odd
@@ -71,10 +72,10 @@ count = $count; let first = $first; let last = $last; let even = $even; let odd
 <h1>No Courses Found.</h1>
 } -->
 
-<!-- __________________________ -->
-<div>
+<!-- _____________________________________________________________________________________________ -->
+<!-- <div>
   ---------------------------------------------------------------------------------------------
-</div>
+</div> -->
 
 <!-- The same example with different syntax -->
 <!-- The same example with different syntax -->
@@ -97,7 +98,7 @@ count = $count; let first = $first; let last = $last; let even = $even; let odd
 <!-- first-class, last-class => They are the classes used inside the child component -->
 <!-- encapsulation: ViewEncapsulation.None, => Add this in the child component -->
 
-<!-- __________________________ -->
-<div>
+<!-- _____________________________________________________________________________________________ -->
+<!-- <div>
   ---------------------------------------------------------------------------------------------
-</div>
+</div> -->

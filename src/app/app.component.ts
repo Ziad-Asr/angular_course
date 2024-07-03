@@ -51,7 +51,8 @@ export class AppComponent {
     {
       id: 2,
       title: '22222',
-      logo: 'https://angular.io/assets/images/logos/angular/angular.svg',
+      logo: '',
+      // logo: 'https://angular.io/assets/images/logos/angular/angular.svg',
       text: 'Desc of the card',
     },
     {

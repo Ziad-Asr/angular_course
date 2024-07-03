@@ -1,10 +1,14 @@
-<div class="card">
-  <div class="card-header">
+<div class="card" [ngClass]="{ begginer: true }" [ngClass]="getCSSClasses()">
+  <div class="card-header" [ngStyle]="{ color: 'red' }">
     <h2>{{ cardData.title }}</h2>
   </div>
+  @if(cardData.logo){
   <div class="card-image">
     <img [src]="cardData.logo" alt="Angular Logo" />
   </div>
+  } @else {
+  <div>No image available</div>
+  }
   <div class="card-footer">
     <p>{{ cardData.text }}</p>
   </div>

@@ -9,3 +9,6 @@ export interface testDataInterface {
   logo: string;
   text: string;
 }
+
+// Did not used
+export interface TestDataInterfaceArray extends Array<testDataInterface> {}

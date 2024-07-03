@@ -2,6 +2,9 @@
 <fc-demo />
 
 <!-- _________________________________________________ -->
+<div>
+  ---------------------------------------------------------------------------------------------
+</div>
 
 <div class="fw-bold">Test</div>
 
@@ -19,6 +22,9 @@
 <input [value]="data.title" #inputRef (keyup)="onKeyUp(inputRef.value)" />
 
 <!-- _________________________________________________ -->
+<div>
+  ---------------------------------------------------------------------------------------------
+</div>
 
 <!-- Passing data to child  -->
 <!-- pass string => "'test'"  -->
@@ -27,9 +33,71 @@
 <app-card [cardData]="dataOfCard" (viewCourseEvent)="onCourseClicked($event)" />
 
 <!-- __________________________ -->
+<div>
+  ---------------------------------------------------------------------------------------------
+</div>
 
 <!-- [testData]="dataOfCard" (Data moves from parent to child) -->
 <!-- (testEventEmmiter)="onTestClicked($event)" (Data moves from child to parent using events) -->
 <app-test [testData]="dataOfCard" (testEventEmmiter)="onTestClicked($event)" />
 
 <!-- __________________________ -->
+<div>
+  ---------------------------------------------------------------------------------------------
+</div>
+
+<!-- Old way of looping -->
+
+<!-- <ng-container *ngFor="let courseData of dataCourses">
+  <app-card [cardData]="courseData" />
+</ng-container> -->
+
+<!-- __________________________ -->
+<div>
+  ---------------------------------------------------------------------------------------------
+</div>
+
+<!-- @for(courseData of dataCourses; track courseData.id; let index = $index; let
+count = $count; let first = $first; let last = $last; let even = $even; let odd
+= $odd) { courses count:
+{{ count }} and current course index
+{{ index }}
+<app-card
+  [cardData]="courseData"
+  [class.first-class]="first"
+  [class.last-class]="last"
+/>
+} @empty {
+<h1>No Courses Found.</h1>
+} -->
+
+<!-- __________________________ -->
+<div>
+  ---------------------------------------------------------------------------------------------
+</div>
+
+<!-- The same example with different syntax -->
+<!-- The same example with different syntax -->
+
+@for(courseData of dataCourses; track courseData.id) { courses count:
+{{ $count }} and current course index
+{{ $index }}
+<app-card
+  [cardData]="courseData"
+  [class.first-class]="$first"
+  [class.last-class]="$last"
+/>
+} @empty {
+<h1>No Courses Found.</h1>
+}
+
+<!-- track courseData.id => here if I can't type (courseData.id), I can use ($index) because i's unique also  -->
+
+<!-- first, last, even, odd => usually used for styling -->
+<!-- first-class, last-class => They are the classes used inside the child component -->
+<!-- encapsulation: ViewEncapsulation.None, => Add this in the child component -->
+
+<!-- __________________________ -->
+<div>
+  ---------------------------------------------------------------------------------------------
+</div>

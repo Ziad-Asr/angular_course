@@ -34,3 +34,16 @@
     margin: 5px 0;
   }
 }
+
+// Dynamic classes (coe from parent
+.first-class {
+  .card {
+    border: 5px solid red !important;
+  }
+}
+
+.last-class {
+  .card {
+    border: 5px solid green !important;
+  }
+}

@@ -80,7 +80,7 @@ count = $count; let first = $first; let last = $last; let even = $even; let odd
 <!-- The same example with different syntax -->
 <!-- The same example with different syntax -->
 
-@for(courseData of dataCourses; track courseData.id) { courses count:
+<!-- @for(courseData of dataCourses; track courseData.id) { courses count:
 {{ $count }} and current course index
 {{ $index }}
 <app-card
@@ -90,7 +90,7 @@ count = $count; let first = $first; let last = $last; let even = $even; let odd
 />
 } @empty {
 <h1>No Courses Found.</h1>
-}
+} -->
 
 <!-- track courseData.id => here if I can't type (courseData.id), I can use ($index) because i's unique also  -->
 
@@ -102,3 +102,52 @@ count = $count; let first = $first; let last = $last; let even = $even; let odd
 <!-- <div>
   ---------------------------------------------------------------------------------------------
 </div> -->
+
+<h4>{{ dataCourses[0].title | lowercase }}</h4>
+<h4>{{ dataCourses[0].title | uppercase }}</h4>
+<h4>{{ dataCourses[0].title | titlecase }}</h4>
+<div>________________________________________</div>
+
+<h4>{{ date | date }}</h4>
+<h4>{{ date | date : "full" }}</h4>
+<h4>{{ date | date : "short" }}</h4>
+<h4>{{ date | date : "MM/dd/yyyy" }}</h4>
+<!-- There are alot of formates for date here -->
+
+<div>________________________________________</div>
+
+<h4>{{ amount | number : "3.1-5" }}</h4>
+<h4>{{ total | percent }}</h4>
+<h4>{{ price | currency }}</h4>
+<div>________________________________________</div>
+
+<h4>{{ price | currency : "EGP" }}</h4>
+
+<h4>{{ price | currency : "CAD" }}</h4>
+<h4>{{ price | currency : "CAD" : "code" }}</h4>
+<!-- Default -->
+<h4>{{ price | currency : "CAD" : "symbol" }}</h4>
+<!-- Symbol only -->
+<h4>{{ price | currency : "CAD" : "symbol-narrow" }}</h4>
+
+<div>________________________________________</div>
+
+<h4>{{ dataCourses[0].title | slice : 0 : 6 }}</h4>
+<!-- Last 6 characters -->
+<h4>{{ dataCourses[0].title | slice : -6 }}</h4>
+
+<div>________________________________________</div>
+
+<h4>{{ dataCourses[0] | json }}</h4>
+
+<div>________________________________________</div>
+
+<!-- Loop over key value only -->
+@for(course of dataCourses[0] | keyvalue; track course.key) {
+<div class="d-flex gap-2">
+  <div>{{ course.key }}:</div>
+  <div>{{ course.value }}</div>
+</div>
+}
+
+<div>________________________________________</div>

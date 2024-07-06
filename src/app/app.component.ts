@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DemoComponent } from './demo/demo.component';
 import { CardComponent } from './card/card.component';
 import { CardDataInterface } from './app.component.model';
 import { TestComponent } from './test/test.component';
 import { CommonModule, NgForOf } from '@angular/common';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-root', // starts with word (app- ....)
@@ -21,7 +22,15 @@ import { CommonModule, NgForOf } from '@angular/common';
   styleUrl: './app.component.scss',
   // styleUrls: ['...', '...']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  // On initialization of this component => made this function ((ngOnInit)), which changes the (dataOfCard.title)
+  // Only get called (one time) on starting up.
+  ngOnInit(): void {
+    timer(3000).subscribe(() => {
+      this.dataOfCard.title = 'Onchange Hook';
+    });
+  }
+
   title: string = 'angular_course';
   data = { title: 'angular_course', count: 10 };
 
